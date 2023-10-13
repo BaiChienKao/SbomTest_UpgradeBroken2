@@ -1,0 +1,16 @@
+
+Upgraded packeages
+1. nvflare 2.0.16  ->  2.2.0
+    Broken point:
+    1. main.py(line 5): from nvflare.lighter.spec import Participant,Builder,Study
+    2. main.py(line 58): def provision(self, study: Study):
+        Explain:
+            The "Study" class is rename to "project" class. So There is no more "Study" class in the nvflare.
+            When the program import the "Study" class and would like to invoke it, the code is broken.
+
+2.  cryptopraphy 39.0.0  ->  41.0.4
+    Broken point:
+    1. main.py(line 271): newSha1 = newBackend.create_hash_ctx(SHA1)
+        Explain:
+            The "create_hash_ctx()" method has been removed in 41.0.4. The code will be broken when it would like
+            to call a method not exist.
