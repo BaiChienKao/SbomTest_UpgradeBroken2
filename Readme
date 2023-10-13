@@ -4,6 +4,7 @@ Upgraded packeages
     Broken point:
     1. main.py(line 5): from nvflare.lighter.spec import Participant,Builder,Study
     2. main.py(line 58): def provision(self, study: Study):
+        Error -> ImportError: cannot import name 'Study' from 'nvflare.lighter.spec'
         Explain:
             The "Study" class is rename to "project" class. So There is no more "Study" class in the nvflare.
             When the program import the "Study" class and would like to invoke it, the code is broken.
@@ -11,6 +12,9 @@ Upgraded packeages
 2.  cryptopraphy 39.0.0  ->  41.0.4
     Broken point:
     1. main.py(line 271): newSha1 = newBackend.create_hash_ctx(SHA1)
+        Error -> AttributeError: 'Backend' object has no attribute 'create_hash_ctx'
         Explain:
             The "create_hash_ctx()" method has been removed in 41.0.4. The code will be broken when it would like
             to call a method not exist.
+
+To view/run the original runnable version, revert to previous commit (tag: BeforeUpgrade): git reset fea1fe5 --hard
