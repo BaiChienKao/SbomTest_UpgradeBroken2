@@ -18,3 +18,18 @@ Upgraded packeages
             to call a method not exist.
 
 To view/run the original runnable version, revert to previous commit (tag: BeforeUpgrade): git reset fea1fe5 --hard
+To swich back to broken version: git reset 5d37b8f --hard
+
+
+Log:
+commit 5d37b8fe88cc741b6a4052a7a6c5b4e53ed864b1 (HEAD -> master, tag: AfterUpgrade)
+Author: bai.chien.kao <bai.chien.kao@accenture.com>
+Date:   Fri Oct 13 16:22:25 2023 -0400
+
+    Upgraded
+
+commit fea1fe507a7e2200d0b2076cccee2114d25937de (tag: BeforeUpgrade)
+Author: bai.chien.kao <bai.chien.kao@accenture.com>
+Date:   Fri Oct 13 16:12:28 2023 -0400
+
+    original
